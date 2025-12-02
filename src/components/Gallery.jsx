@@ -1,42 +1,16 @@
-
 import ImageGallery from "react-image-gallery"
-import { useNavigate } from "react-router-dom";
-
 import "react-image-gallery/styles/css/image-gallery.css"
 
-const images = [
-    {
-        original: "https://picsum.photos/id/1018/1000/600/",
-        thumbnail: "https://picsum.photos/id/1018/250/150/",
-    },
-    {
-        original: "https://picsum.photos/id/1015/1000/600/",
-        thumbnail: "https://picsum.photos/id/1015/250/150/",
-    },
-    {
-        original: "https://picsum.photos/id/1019/1000/600/",
-        thumbnail: "https://picsum.photos/id/1019/250/150/",
-    },
-];
+import { useNavigate } from "react-router-dom";
+import escapadas from "../assets/data/escapadas.json"
 function reDirigir(e) {
-    window.location.href = "/rutas"
-
+  navigate("/rutas")
 }
-
 export default function Gallery() {
-    return (
-        <>
-        <div className="gallery">
-
-            <ImageGallery
-            className="gallery"
-                items={images}
-                autoPlay={true}
-                thumbnailPosition="bottom"
-                onClick={reDirigir}
-               
-            />
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div className="gallery">
+        <ImageGallery items={escapadas} autoPlay={true} thumbnailPosition="bottom" onClick={reDirigir} /></div>
+    </>
+  )
 }
