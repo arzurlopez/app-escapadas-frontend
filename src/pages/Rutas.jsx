@@ -1,6 +1,9 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 import escapadas from "../assets/data/escapadas.json"
+import { Link } from "react-router-dom"
+
+
 export default function Rutas() {
   const style = {
     height: "500px"
@@ -18,7 +21,9 @@ export default function Rutas() {
             // console.log(item.latlong)
             <Marker key={index} position={item.latlong}>
               <Popup>
-                {item.description} |{item.fecha}
+                <p>|{item.fecha} </p> 
+                            <Link to={`/ruta/${index}`}>{item.description}  </Link>
+
               </Popup>
             </Marker>
           ))}

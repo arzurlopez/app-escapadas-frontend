@@ -4,7 +4,9 @@ import { Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/home'
 import Rutas from './pages/Rutas'
 import Creditos from './pages/Creditos'
+import ListaRutas from './pages/ListaRutas'
 import { FaGithub } from "react-icons/fa";
+import Ruta from './pages/Ruta'
 
 
 
@@ -13,11 +15,12 @@ function App() {
   return (
     <>
       <header>
-        <h1>Rutas de tu tierra</h1>
         <nav className="nav-superior">
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/rutas">Rutas</Link></li>
+            <li><Link to="/lista-rutas">Lista de Rutas</Link></li>
+
             <li><Link to="/creditos">Créditos</Link></li>
           </ul>
 
@@ -26,17 +29,19 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home />}>Home</Route>
-          <Route path="/rutas" element={<Rutas />}>Rutas</Route>
-          <Route path="/creditos" element={<Creditos />}>Creditos</Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/rutas" element={<Rutas />}></Route>
+          <Route path="/lista-rutas" element={<ListaRutas />}></Route>
+          <Route path="/ruta/:id" element={<Ruta />}></Route>
+          <Route path="/creditos" element={<Creditos />}></Route>
         </Routes>
       </main>
-      
+
 
       <footer>
-        <p> &copy; 2025 Arturo López - Vicálvaro 
-          <a href="https://github.com/arturolopez"> <FaGithub/> </a> 
-          </p>
+        <p> &copy; 2025 Arturo López - Vicálvaro
+          <a href="https://github.com/arzurlopez"> <FaGithub /> </a>
+        </p>
       </footer>
 
     </>
